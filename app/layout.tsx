@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,18 +18,38 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-50`}>
-        {/* Gradient background effect */}
-        <div className="fixed inset-0 bg-gradient-to-br from-indigo-50 via-white to-blue-50 z-[-1]"></div>
-        
-        {/* Header with very obvious positioning */}
-        <header className="absolute top-16 left-16 z-50">
-          <div className="bg-white/30 backdrop-blur-sm p-4 rounded-xl">
-            <Link href="/" className="inline-block">
-              <span className="text-4xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+      <body className={`${inter.className} bg-gray-50 text-white`}>
+        <div className="blockchain-glow"></div>
+        {/* Header */}
+        <header className="md:px-16 lg:px-24">
+          <div className="px-4 py-4 flex items-center">
+            <Link href="/" className="inline-flex items-center">
+              <Image 
+                src="/Collabr_Logo.png" 
+                alt="Collabr Logo" 
+                width={40} 
+                height={40} 
+                className="mr-2"
+              />
+              <span className="text-4xl font-bold text-white">
                 Collabr
               </span>
             </Link>
+            
+            <nav className="ml-8 flex items-center">
+              <Link href="/about" className="text-white hover:text-primary font-medium transition-colors">
+                About
+              </Link>
+            </nav>
+            
+            {/* Mobile menu button - moved to right side */}
+            <div className="md:hidden ml-auto">
+              <button className="text-white hover:text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
           </div>
         </header>
         

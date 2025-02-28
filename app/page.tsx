@@ -1,25 +1,26 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section with padding for the navbar */}
-      <section className="relative pt-32 pb-20 md:py-40 overflow-hidden min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-100 to-blue-50 z-0"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-12 md:mb-0">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
+      {/* Hero Section with adjusted padding */}
+      <section className="relative pt-24 pb-20 md:pt-32 md:pb-24 overflow-hidden min-h-screen flex items-center">
+        <div className="absolute inset-0 z-0"></div>
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="flex flex-col md:flex-row items-start">
+            <div className="md:w-1/2 mb-12 md:mb-0 md:pr-8">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 md:leading-tight">
                 Incentivize your fans to drive community growth
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-gray-700">
                 Transform community engagement into rewarding and decentralized experiences
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/waitlist" className="web3-button text-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:max-w-md">
+                <Link href="/waitlist" className="web3-button text-center w-full inline-block">
                   Join the Waitlist
                 </Link>
-                <Link href="/about" className="btn-secondary text-center">
+                <Link href="/about" className="btn-secondary text-center w-full inline-block">
                   Learn More
                 </Link>
               </div>
@@ -47,9 +48,17 @@ export default function Home() {
                 <div className="crypto-card p-6 md:p-8">
                   <div className="bg-gradient-to-r from-primary/10 to-blue-100 rounded-xl p-6 mb-6">
                     <div className="flex items-center mb-4">
-                      <div className="token-icon">C</div>
-                      <div className="ml-4">
-                        <h3 className="font-bold text-gray-900">Creator Community</h3>
+                      <div className="mr-4">
+                        <Image 
+                          src="/community_icon.png" 
+                          alt="Community Icon" 
+                          width={32} 
+                          height={32} 
+                          className="rounded-full"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900">Penguins Club</h3>
                         <p className="text-gray-600 text-sm">1,240 members</p>
                       </div>
                     </div>
@@ -57,17 +66,17 @@ export default function Home() {
                       <div className="flex items-center">
                         <div className="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center text-primary">✓</div>
                         <div className="ml-3 text-gray-700">Share our latest post on Twitter</div>
-                        <div className="ml-auto text-primary font-medium">+50 pts</div>
+                        <div className="ml-auto text-primary font-medium">+10 pugdy pts</div>
                       </div>
                       <div className="flex items-center">
                         <div className="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center text-primary">✓</div>
                         <div className="ml-3 text-gray-700">Host a community meetup</div>
-                        <div className="ml-auto text-primary font-medium">+200 pts</div>
+                        <div className="ml-auto text-primary font-medium">+200 pugdy pts</div>
                       </div>
                       <div className="flex items-center">
                         <div className="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center text-primary">✓</div>
-                        <div className="ml-3 text-gray-700">Create derivative artwork</div>
-                        <div className="ml-auto text-primary font-medium">+100 pts</div>
+                        <div className="ml-3 text-gray-700">Mint a Pugdy Penguins NFT</div>
+                        <div className="ml-auto text-primary font-medium">+500 pugdy pts</div>
                       </div>
                     </div>
                   </div>
