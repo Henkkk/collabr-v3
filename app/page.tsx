@@ -10,10 +10,10 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="flex flex-col md:flex-row items-start">
             <div className="md:w-1/2 mb-12 md:mb-0 md:pr-8">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 md:leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white md:leading-tight">
                 Incentivize your fans to drive community growth
               </h1>
-              <p className="text-xl md:text-2xl mb-8 text-gray-700">
+              <p className="text-xl md:text-2xl mb-8 text-white">
                 Transform community engagement into rewarding and decentralized experiences
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:max-w-md">
@@ -66,17 +66,17 @@ export default function Home() {
                       <div className="flex items-center">
                         <div className="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center text-primary">✓</div>
                         <div className="ml-3 text-gray-700">Share our latest post on Twitter</div>
-                        <div className="ml-auto text-primary font-medium">+10 pugdy pts</div>
+                        <div className="ml-auto text-gray-700 text-primary font-medium">+10 pugdy pts</div>
                       </div>
                       <div className="flex items-center">
                         <div className="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center text-primary">✓</div>
                         <div className="ml-3 text-gray-700">Host a community meetup</div>
-                        <div className="ml-auto text-primary font-medium">+200 pugdy pts</div>
+                        <div className="ml-auto text-gray-700 text-primary font-medium">+200 pugdy pts</div>
                       </div>
                       <div className="flex items-center">
                         <div className="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center text-primary">✓</div>
                         <div className="ml-3 text-gray-700">Mint a Pugdy Penguins NFT</div>
-                        <div className="ml-auto text-primary font-medium">+500 pugdy pts</div>
+                        <div className="ml-auto text-gray-700 text-primary font-medium">+500 pugdy pts</div>
                       </div>
                     </div>
                   </div>
