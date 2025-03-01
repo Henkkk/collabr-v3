@@ -24,7 +24,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Henry Yeung',
     role: 'Co-Founder',
-    bio: 'NYU CS Alumni',
+    bio: 'NYU CS alum, run a YouTube channel with 15K subscribers and 4M total views.',
     image: '/henry.png',
     social: {
       twitter: 'https://twitter.com/alexj',
@@ -34,7 +34,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'David Slakter',
     role: 'Co-Founder',
-    bio: 'NYU CS Alumni',
+    bio: 'NYU CS alum, prev software engineer at Walmart Tech.',
     image: '/david.png',
     social: {
       twitter: 'https://twitter.com/sarahc',
@@ -204,7 +204,7 @@ export default function About() {
       </section>
 
       {/* Mission Section - Clean and focused */}
-      <section className="py-20 bg-white">
+      <section className="mb-16 py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">Our Mission</h2>
@@ -234,21 +234,18 @@ export default function About() {
                   <p>
                     We envision a future where digital communities are more than just followers—they're active participants with real ownership and stake in the communities they help build.
                   </p>
-                  <p>
-                    By 2025, we aim to power over 10,000 thriving communities where:
-                  </p>
                   <ul className="space-y-2 mt-4">
                     <li className="flex items-start">
-                      <span className="inline-flex items-center justify-center w-6 h-6 mr-2 bg-primary rounded-full text-white text-sm flex-shrink-0">✓</span>
+                      <span className="inline-flex items-center justify-center w-6 h-6 mr-2 bg-primary rounded-full text-black text-sm flex-shrink-0">✓</span>
                       <span>Community contributions are properly valued and rewarded</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="inline-flex items-center justify-center w-6 h-6 mr-2 bg-primary rounded-full text-white text-sm flex-shrink-0">✓</span>
-                      <span>Engagement is driven by meaningful incentives, not just algorithms</span>
+                    <span className="inline-flex items-center justify-center w-6 h-6 mr-2 bg-primary rounded-full text-black text-sm flex-shrink-0">✓</span>
+                    <span>Engagement is driven by meaningful incentives, not just algorithms</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="inline-flex items-center justify-center w-6 h-6 mr-2 bg-primary rounded-full text-white text-sm flex-shrink-0">✓</span>
-                      <span>Creators and community members share in the value they collectively create</span>
+                    <span className="inline-flex items-center justify-center w-6 h-6 mr-2 bg-primary rounded-full text-black text-sm flex-shrink-0">✓</span>
+                    <span>Creators and community members share in the value they collectively create</span>
                     </li>
                   </ul>
                 </div>

@@ -8,6 +8,9 @@ export default function Home() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeCard, setActiveCard] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   
   // No need for cardWidth state since we're using percentage-based transforms
   
@@ -43,10 +46,43 @@ export default function Home() {
     }, 500); // Match this with the CSS transition duration
   };
 
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || isSubmitting) return;
+    
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    try {
+      // You can replace this with your preferred method of sending notifications
+      // This example uses a simple fetch to a hypothetical API endpoint
+      const response = await fetch('/api/notify-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to submit');
+      }
+      
+      setSubmitStatus('success');
+      setEmail(''); // Clear the input on success
+    } catch (error) {
+      console.error('Error submitting email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   // Card data for easier management
   const cards = [
     {
-      title: "Fernando Martinez Club",
+      title: "Music Club | Fernando Martinez",
       members: "1,337 members",
       iconSrc: "/singer-icon.png",
       iconAlt: "Community Icon",
@@ -70,7 +106,7 @@ export default function Home() {
       ]
     },
     {
-      title: "Antoni Shkraba Club | NFT Artist",
+      title: "Artist Space | Antoni Shkraba",
       members: "711 members",
       iconSrc: "/artist-icon.png",
       iconAlt: "Community Icon",
@@ -94,7 +130,7 @@ export default function Home() {
       ]
     },
     {
-      title: "Tima Miroshnichenko Club | Web3 Gamer",
+      title: "Axie Infinity Enthusiast | Tima Miroshnichenko",
       members: "918 members",
       iconSrc: "/gamer-icon.png",
       iconAlt: "Community Icon",
@@ -134,11 +170,11 @@ export default function Home() {
                 Transform community engagement into rewarding and decentralized experiences
               </p>
               
-              {/* Enhanced waitlist section with more obvious email input */}
+              {/* Enhanced waitlist section with form submission */}
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 mb-8 border border-white/20">
-                <h3 className="text-xl font-semibold text-white mb-3">Get Early Access</h3>
-                <p className="text-white/80 mb-4">Join our waitlist to be the first to experience our platform.</p>
-                <div className="flex flex-col sm:flex-row gap-3">
+                <h3 className="text-xl font-semibold text-white mb-3">Member Application</h3>
+                <p className="text-white/80 mb-4">Our team will reach out to you.</p>
+                <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3">
                   <div className="relative flex-grow">
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -148,18 +184,31 @@ export default function Home() {
                     </div>
                     <input 
                       type="email" 
-                      placeholder="Enter your email for early access" 
+                      placeholder="Enter your email..." 
                       className="w-full pl-12 pr-24 py-4 rounded-full border-2 border-white/30 focus:border-primary focus:ring-2 focus:ring-primary text-gray-900 font-medium shadow-lg"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
                     />
                     <button 
                       type="submit" 
-                      className="absolute right-1 top-1 bottom-1 px-5 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors font-semibold"
+                      className={`absolute right-1 top-1 bottom-1 px-5 bg-primary text-white rounded-full transition-colors font-semibold ${
+                        isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-primary-dark'
+                      }`}
+                      disabled={isSubmitting}
                     >
-                      Join Waitlist
+                      {isSubmitting ? 'Submitting...' : 'Submit'}
                     </button>
                   </div>
-                </div>
-                <p className="text-white/60 text-sm mt-3 text-center">We'll notify you when we launch!</p>
+                </form>
+                
+                {/* Status message */}
+                {submitStatus === 'success' && (
+                  <p className="mt-2 text-green-400 text-sm">Thank you! We'll be in touch soon.</p>
+                )}
+                {submitStatus === 'error' && (
+                  <p className="mt-2 text-red-400 text-sm">Something went wrong. Please try again.</p>
+                )}
               </div>
               
               <div className="mt-8 flex items-center gap-4">

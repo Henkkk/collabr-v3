@@ -4,11 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
-export default function HeaderWrapper({ 
-  children 
-}: { 
-  children: React.ReactNode 
-}) {
+interface HeaderWrapperProps {
+  children?: React.ReactNode;
+}
+
+const HeaderWrapper: React.FC<HeaderWrapperProps> = ({ children }) => {
   const pathname = usePathname();
   const isAboutPage = pathname === '/about';
   
@@ -53,4 +53,6 @@ export default function HeaderWrapper({
 
     </>
   );
-} 
+};
+
+export default HeaderWrapper; 

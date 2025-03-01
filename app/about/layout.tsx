@@ -20,8 +20,10 @@ export default function AboutLayout({
 }) {
   return (
     <div className="min-h-screen bg-black text-white">
-      <HeaderWrapper />
+      <HeaderWrapper>
+        {/* You can add content inside HeaderWrapper here if needed */}
+      </HeaderWrapper>
       <main>{children}</main>
     </div>
   );
-} 
+} 4

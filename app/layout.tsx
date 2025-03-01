@@ -25,9 +25,9 @@ export default function RootLayout({
               {Array(3).fill(0).map((_, index) => (
                 <div key={index} className="flex items-center space-x-8">
                   <div className="flex items-center">
-                    <span className="text-gray-800 font-medium text-sm md:text-base">Stay tuned for our official launch</span>
+                  <span className="text-gray-800 font-medium text-sm md:text-base">Stay tuned for our official launch</span>
                     <span className="mx-4 text-gray-400">•</span>
-                    <span className="text-gray-800 font-medium text-sm md:text-base">Join the waitlist for early access</span>
+                    <span className="text-gray-800 font-medium text-sm md:text-base">Apply to create your community</span>
                     <span className="mx-4 text-gray-400">•</span>
                     <span className="text-gray-800 font-medium text-sm md:text-base">Be the first to experience our platform</span>
                     <span className="mx-4 text-gray-400">•</span>
