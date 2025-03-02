@@ -6,7 +6,7 @@ import HeaderWrapper from './components/HeaderWrapper';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Community Growth Platform',
+  title: 'Collabr | Grow, Engage, Earn',
   description: 'Incentivize your fans to drive community growth',
 };
 
