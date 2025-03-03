@@ -348,12 +348,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* Token Section - Introducing $COLBR */}
+      {/* Token Section - Introducing $CMTY */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-gray-900">Introducing $COLBR Token</h2>
+              <h2 className="text-3xl font-bold mb-4 text-gray-900">Introducing $CMTY Token</h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
                 The native utility token powering the Collabr ecosystem
               </p>
@@ -364,20 +364,20 @@ export default function About() {
                 <div>
                   <h3 className="text-xl font-bold text-gray-800">Token Purpose</h3>
                   <p className="text-gray-700">
-                    $COLBR tokens serve as the bridge between communities on our platform
+                    $CMTY tokens serve as the bridge between communities on our platform
                   </p>
                 </div>
               </div>
               
               <p className="text-gray-700 mb-6">
-                The $COLBR token is designed to enable users to convert their tokens into community-specific points across any community on the platform. This creates a unified ecosystem where engagement in one community can translate to participation in others.
+                The $CMTY token is designed to enable users to convert their tokens into community-specific points across any community on the platform. This creates a unified ecosystem where engagement in one community can translate to participation in others.
               </p>
               
               <div className="mt-8">
                 <div className="bg-primary/5 rounded-lg">
                   <h4 className="font-bold text-gray-800 mb-2">Community Point Conversion</h4>
                   <p className="text-gray-700">
-                    Convert $COLBR tokens into points for any community on the platform to access exclusive rewards and experiences.
+                    Convert $CMTY tokens into points for any community on the platform to access exclusive rewards and experiences.
                   </p>
                 </div>
               </div>
