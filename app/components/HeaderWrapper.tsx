@@ -31,7 +31,10 @@ const HeaderWrapper: React.FC<HeaderWrapperProps> = ({ children }) => {
               </span>
             </Link>
             
-            <nav className="ml-8 flex items-center">
+            <nav className="ml-8 flex items-center space-x-6">
+              <Link href="https://collabr.gitbook.io/collabr/" className="text-white hover:text-primary font-medium transition-colors">
+                Documentation
+              </Link>
               <Link href="/about" className="text-white hover:text-primary font-medium transition-colors">
                 About
               </Link>
